@@ -5,5 +5,8 @@ from .models import Category
 
 # Create your views here.
 def index(request):
-    categories = Category.objects.all().order_by('-sort')
-    return HttpResponse(categories)
+    categories = Category.objects.filter(is_visible=True)
+    context = {
+        'categories': categories,
+    }
+    return render(request, 'menu.html', context=context)
