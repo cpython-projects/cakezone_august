@@ -45,10 +45,12 @@
                             <h4 class="text-primary text-uppercase mb-4">Newsletter</h4>
                             <p>Amet justo diam dolor rebum lorem sit stet sea justo kasd</p>
                             <form action="">
-                                <div class="input-group">
-                                    <input type="text" class="form-control border-white p-3" placeholder="Your Email">
+                                {% csrf_token %}
+                                {{ subscriber_form.as_p }}
+{#                                <div class="input-group">#}
+{#                                    <input type="text" class="form-control border-white p-3" placeholder="Your Email">#}
                                     <button class="btn btn-primary">Sign Up</button>
-                                </div>
+{#                                </div>#}
                             </form>
                         </div>
                     </div>
