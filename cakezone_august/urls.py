@@ -19,6 +19,8 @@ from django.urls import path, include
 from django.conf.urls.static import static
 
 from cakezone_august import settings
+from account.views import RegisterView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,7 +31,9 @@ urlpatterns = [
     path('services/', include('services.urls')),
     path('contacts/', include('contacts.urls')),
 
-
+    path('register/', RegisterView.as_view(), name='register'),
+    # path('login/', , name='login'),
+    # path('logout/', , name='logout'),
 ]
 
 
