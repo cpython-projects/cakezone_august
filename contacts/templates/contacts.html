@@ -27,7 +27,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
+            {% if user.is_authenticated %}
+                <div class="row justify-content-center">
                 <div class="col-lg-6">
                 <form action="{% url 'contacts:index' %}" method="post">
                     {% csrf_token %}
@@ -63,6 +64,7 @@
                 </form>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
     <!-- Contact End -->
