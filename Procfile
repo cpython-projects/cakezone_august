@@ -1,0 +1,1 @@
+web: gunicorn cakezone_august.wsgi --log-file –
